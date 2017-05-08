@@ -14,9 +14,7 @@ namespace AverageStudentGrades
 #if DEBUG
             Console.SetIn(new System.IO.StreamReader(@"E:\input.txt"));
 #endif
-
             var input = int.Parse(Console.ReadLine());
-
             var grades = new Dictionary<string, List<string>>();
 
             for (int i = 0; i < input; i++)
@@ -31,7 +29,6 @@ namespace AverageStudentGrades
             foreach (var item in grades)
             {
                 Console.WriteLine($"{item.Key} -> {String.Join(" ", item.Value)} (avg: {item.Value.Select(x => double.Parse(x)).ToList().Average():0.00})");
-
             }
 
         }
